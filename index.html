@@ -731,7 +731,9 @@ var PAISES = [
     try { localStorage.setItem('soul-idioma', novo); } catch (e) {}
   }
   document.querySelectorAll('[data-idioma]').forEach(function (b) { b.addEventListener('click', function () { trocar(b.getAttribute('data-idioma')); }); });
-  try { var salvo = localStorage.getItem('soul-idioma'); if (salvo && salvo !== 'pt' && TEXTOS[salvo]) trocar(salvo); } catch (e) {}
+  var pedido = (location.search.match(/[?&]idioma=(pt|en|es)/) || [])[1];  // vem de en./es./pt.soulprofessional.com.br
+  if (pedido) { if (pedido !== 'pt') trocar(pedido); else try { localStorage.setItem('soul-idioma', 'pt'); } catch (e) {} }
+  else try { var salvo = localStorage.getItem('soul-idioma'); if (salvo && salvo !== 'pt' && TEXTOS[salvo]) trocar(salvo); } catch (e) {}
 
   // cabeçalho, barra de leitura, paralaxe, botão flutuante e menu ativo
   var topo = document.getElementById('topo'), barra = document.querySelector('.progresso'), flut = document.querySelector('.flutuante');
