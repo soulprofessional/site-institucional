@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Soul Professional: cosméticos capilares profissionais sem formol, com ativos da Amazônia. Presente em 34 países. Conheça as linhas e compre na loja oficial.">
+<meta name="description" content="Soul Professional: cosméticos capilares profissionais sem formol, com ativos da Amazônia. Presente em vários países. Conheça as linhas e compre na loja oficial.">
 <meta property="og:title" content="Soul Professional | Cosméticos Capilares Profissionais">
-<meta property="og:description" content="Soul Professional: cosméticos capilares profissionais sem formol, com ativos da Amazônia. Presente em 34 países. Conheça as linhas e compre na loja oficial.">
+<meta property="og:description" content="Soul Professional: cosméticos capilares profissionais sem formol, com ativos da Amazônia. Presente em vários países. Conheça as linhas e compre na loja oficial.">
 <meta property="og:image" content="https://www.soulprofessional.com.br/arquivos/abertura.jpg">
 <meta property="og:type" content="website">
 <link rel="icon" type="image/png" href="arquivos/icone-so.png">
@@ -38,6 +38,7 @@ p { margin: 0; }
 b { font-weight: 600; }
 .faixa { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
 .miolo { max-width: 1240px; margin: 0 auto; padding-left: calc(var(--gutter) - 16px); padding-right: calc(var(--gutter) - 16px); }
+.miolo.faixa { padding-left: calc(max(16px, env(safe-area-inset-left, 0px)) + var(--gutter) - 16px); padding-right: calc(max(16px, env(safe-area-inset-right, 0px)) + var(--gutter) - 16px); }
 .rotulo { font-size: 13px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; }
 a:focus-visible, button:focus-visible { outline: 2px solid var(--areia); outline-offset: 3px; }
 .claro a:focus-visible, .claro button:focus-visible { outline-color: var(--preto); }
@@ -81,14 +82,27 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .idiomas button:hover { opacity: 1; }
 .idiomas button[aria-pressed="true"] { opacity: 1; border-color: rgba(255,255,255,.6); }
 .topo .botao { min-height: 42px; padding: 10px 18px; }
-@media (max-width: 1080px) { .topo nav { display: none; } .topo .idiomas { margin-left: auto; } }
+.menu-botao { display: none; background: transparent; border: 0; color: inherit; width: 44px; height: 44px; padding: 10px; cursor: pointer; flex-direction: column; justify-content: center; gap: 6px; }
+.menu-botao span { display: block; height: 1.5px; background: currentColor; transition: transform .3s var(--suave), opacity .3s; }
+.topo.aberto .menu-botao span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+.topo.aberto .menu-botao span:nth-child(2) { opacity: 0; }
+.topo.aberto .menu-botao span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+.topo nav .so-movel { display: none; }
+@media (max-width: 1080px) {
+  .topo nav { display: none; } .topo .idiomas { margin-left: auto; } .menu-botao { display: flex; }
+  .topo.aberto { background: var(--verde); }
+  .topo.aberto nav { display: flex; flex-direction: column; gap: 0; position: absolute; top: 100%; left: 0; right: 0; background: var(--verde); padding: 8px calc(max(16px, env(safe-area-inset-left, 0px)) + var(--gutter) - 16px) 24px; max-height: calc(100vh - 72px); overflow-y: auto; }
+  .topo.aberto nav a { font-size: 15px; padding-block: 14px; border-bottom: 1px solid rgba(255,255,255,.18); }
+  .topo.aberto nav a::after { display: none; }
+  .topo nav .so-movel { display: block; font-weight: 600; }
+}
 @media (max-width: 480px) { .topo .logo img { width: 118px; } .topo .botao { display: none; } }
 
 /* abertura */
 .abertura { position: relative; min-height: min(92vh, 860px); display: flex; align-items: flex-end; color: var(--branco); overflow: hidden; background: var(--preto); }
 .abertura .fundo { position: absolute; inset: -6% 0 0; background-size: cover; background-position: 62% 30%; will-change: transform; }
 .abertura .fundo video { width: 100%; height: 100%; object-fit: cover; object-position: 62% 30%; display: block; }
-.abertura::after { content: ""; position: absolute; inset: 0; background: linear-gradient(100deg, rgba(29,29,27,.78) 0%, rgba(29,29,27,.45) 45%, rgba(29,29,27,.05) 75%), linear-gradient(0deg, rgba(29,29,27,.55), transparent 45%); }
+.abertura::after { content: ""; position: absolute; inset: 0; background: linear-gradient(100deg, rgba(29,29,27,.84) 0%, rgba(29,29,27,.58) 45%, rgba(29,29,27,.08) 75%), linear-gradient(0deg, rgba(29,29,27,.55), transparent 45%); }
 .abertura .miolo { position: relative; z-index: 1; width: 100%; padding-block: 140px clamp(56px, 9vw, 104px); display: flex; flex-direction: column; gap: 26px; }
 .abertura .rotulo { color: var(--areia); }
 .abertura h1 { font-size: clamp(44px, 7.4vw, 96px); font-weight: 300; letter-spacing: -.02em; max-width: 12ch; }
@@ -123,6 +137,8 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .numeros .item { padding: 32px 24px 0 0; display: flex; flex-direction: column; gap: 10px; }
 .numeros .valor { font-size: clamp(44px, 5.6vw, 72px); font-weight: 300; line-height: 1; color: var(--ink); font-variant-numeric: tabular-nums; letter-spacing: -.02em; }
 .numeros .valor small { font-size: .38em; font-weight: 500; letter-spacing: 0; color: var(--ink-accent); margin-left: 6px; }
+.numeros .valor .palavra { font-size: .6em; }
+.numeros .valor .palavra + small { display: block; margin: 6px 0 0; }
 .numeros .item p { color: var(--ink-soft); font-size: 15px; line-height: 1.55; max-width: 24ch; }
 @media (max-width: 760px) { .numeros .grade { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 36px; } }
 
@@ -335,7 +351,7 @@ footer .fim { margin-top: 44px; padding-top: 20px; border-top: 1px solid #3a3a36
 <header class="topo faixa" id="topo">
   <div class="miolo">
     <a class="logo" href="#inicio" aria-label="Soul Professional"><img src="arquivos/logo-areia.png" alt="Soul Professional" width="156" height="40"></a>
-    <nav aria-label="Seções">
+    <nav aria-label="Seções" id="menu-secoes">
       <a href="#linhas" data-t="nav_linhas">Linhas</a>
       <a href="#teste" data-t="nav_teste">Teste do cabelo</a>
       <a href="#sem-formol" data-t="nav_formol">Sem formol</a>
@@ -343,6 +359,7 @@ footer .fim { margin-top: 44px; padding-top: 20px; border-top: 1px solid #3a3a36
       <a href="#mundo" data-t="nav_mundo">No mundo</a>
       <a href="#profissionais" data-t="nav_prof">Profissionais</a>
       <a href="#contato" data-t="nav_contato">Contato</a>
+      <a class="so-movel" href="https://lojasoulprofessional.com.br/" target="_blank" rel="noopener" data-t="loja">Loja oficial</a>
     </nav>
     <div class="idiomas" role="group" aria-label="Idioma">
       <button type="button" data-idioma="pt" aria-pressed="true">PT</button>
@@ -350,6 +367,7 @@ footer .fim { margin-top: 44px; padding-top: 20px; border-top: 1px solid #3a3a36
       <button type="button" data-idioma="es" aria-pressed="false">ES</button>
     </div>
     <a class="botao b-branco" href="https://lojasoulprofessional.com.br/" target="_blank" rel="noopener" data-t="loja">Loja oficial</a>
+    <button type="button" class="menu-botao" aria-label="Menu" aria-expanded="false" aria-controls="menu-secoes"><span></span><span></span><span></span></button>
   </div>
 </header>
 
@@ -372,15 +390,15 @@ footer .fim { margin-top: 44px; padding-top: 20px; border-top: 1px solid #3a3a36
   </section>
 
   <div class="corrida" aria-hidden="true"><div class="trilho">
-    <span>Sem formol</span><span>Cruelty-free</span><span>Ativos da Amazônia</span><span>Presente em 34 países</span><span>Qualidade de salão</span><span>Feito no Brasil</span>
-    <span>Sem formol</span><span>Cruelty-free</span><span>Ativos da Amazônia</span><span>Presente em 34 países</span><span>Qualidade de salão</span><span>Feito no Brasil</span>
+    <span>Sem formol</span><span>Cruelty-free</span><span>Ativos da Amazônia</span><span>Presente em vários países</span><span>Qualidade de salão</span><span>Feito no Brasil</span>
+    <span>Sem formol</span><span>Cruelty-free</span><span>Ativos da Amazônia</span><span>Presente em vários países</span><span>Qualidade de salão</span><span>Feito no Brasil</span>
   </div></div>
 
   <section class="numeros faixa claro" id="numeros" aria-label="Soul Professional em números">
     <div class="miolo">
       <div class="grade">
         <div class="item surge"><span class="valor"><span data-conta="11">11</span><small data-t="n1u">anos</small></span><p data-t="n1">de mercado em cosméticos capilares profissionais</p></div>
-        <div class="item surge d1"><span class="valor"><span data-conta="34">34</span><small data-t="n2u">países</small></span><p data-t="n2">com a Soul Professional presente</p></div>
+        <div class="item surge d1"><span class="valor"><span class="palavra" data-t="n2v">Vários</span><small data-t="n2u">países</small></span><p data-t="n2">com a Soul Professional presente</p></div>
         <div class="item surge d2"><span class="valor"><span data-conta="6">6</span><small data-t="n3u">feiras</small></span><p data-t="n3">internacionais desde 2024, com a ABIHPEC e a ApexBrasil</p></div>
         <div class="item surge d3"><span class="valor"><span data-conta="5">5</span><small data-t="n4u">mercados</small></span><p data-t="n4">com registro sanitário, da União Europeia ao Japão</p></div>
       </div>
@@ -502,7 +520,7 @@ footer .fim { margin-top: 44px; padding-top: 20px; border-top: 1px solid #3a3a36
   <section class="mundo faixa" id="mundo" aria-labelledby="titulo-mundo">
     <div class="miolo">
       <div class="topo-m">
-        <div><span class="rotulo surge" data-t="m_rotulo">No mundo</span><h2 id="titulo-mundo" class="surge d1" data-t="m_titulo">Uma marca brasileira presente em <em>34 países</em></h2></div>
+        <div><span class="rotulo surge" data-t="m_rotulo">No mundo</span><h2 id="titulo-mundo" class="surge d1" data-t="m_titulo">Uma marca brasileira presente em <em>vários países</em></h2></div>
         <p class="apoio surge d2" data-t="m_texto">A <b>Soul Professional</b> leva a cosmética capilar brasileira às maiores feiras do setor, com o apoio da ABIHPEC e da ApexBrasil.</p>
       </div>
       <div class="mapa" id="mapa"><svg id="mapa-svg" role="img" aria-label="Mapa-múndi com os países onde a Soul Professional está presente"></svg><div class="balao" id="balao"></div></div>
@@ -586,7 +604,7 @@ var TEXTOS = {
     ab_lead: "<b>Soul Professional</b> formulas with Amazonian actives, for the salon and for your routine at home: shine, touch, softness and movement in every strand.",
     ab_b1: 'Shop the official store <span class="seta" aria-hidden="true">→</span>', ab_b2: "I am a professional", ab_b3: "Become a distributor",
     rolar: "Scroll",
-    n1: "years in professional hair care", n1u: "years", n2: "countries with Soul Professional", n2u: "countries",
+    n1: "years in professional hair care", n1u: "years", n2: "countries with Soul Professional", n2u: "countries", n2v: "Many",
     n3: "international trade shows since 2024, with ABIHPEC and ApexBrasil", n3u: "shows", n4: "markets with health registration, from the European Union to Japan", n4u: "markets",
     f_rotulo: "International registrations", f_titulo: "FORMALDEHYDE<br>FREE",
     f_texto: "Registering cosmetics in the most demanding markets in the world takes time, testing and investment. <b>Soul Professional</b> did it to carry the formaldehyde-free seal in its formula, a rare advantage in hair straightening.",
@@ -620,7 +638,7 @@ var TEXTOS = {
     g_texto: "A Fashion and Photography graduate from IED Milan, he has a 25-year career in Brazil and abroad, including Mod's Hair in Paris and Toni&nbsp;&amp;&nbsp;Guy in Milan. He created the Balayage Surf technique and leads the brand's technical and artistic team.",
     g_d1: "Featured by Forbes", g_d2: "Dolce &amp; Gabbana fashion week", g_d3: "Balayage Surf",
     insta_ana: 'Ana on Instagram <span class="seta" aria-hidden="true">→</span>', insta_glauber: 'Glauber on Instagram <span class="seta" aria-hidden="true">→</span>',
-    m_rotulo: "Worldwide", m_titulo: "A Brazilian brand present in <em>34 countries</em>",
+    m_rotulo: "Worldwide", m_titulo: "A Brazilian brand present in <em>many countries</em>",
     m_texto: "<b>Soul Professional</b> takes Brazilian hair care to the industry's biggest trade shows, with the support of ABIHPEC and ApexBrasil.",
     m_dica: "Tap or hover over a point to see the country.", m_feiras: "International trade shows",
     p_rotulo: "Salons and hairdressers", p_titulo: "A professional line for everyday salon work",
@@ -643,7 +661,7 @@ var TEXTOS = {
     ab_lead: "Fórmulas de <b>Soul Professional</b> con activos de la Amazonía, para el salón y para la rutina en casa: brillo, tacto, suavidad y movimiento en el cabello.",
     ab_b1: 'Comprar en la tienda oficial <span class="seta" aria-hidden="true">→</span>', ab_b2: "Soy profesional", ab_b3: "Quiero ser distribuidor",
     rolar: "Desliza",
-    n1: "en el mercado de la cosmética capilar profesional", n1u: "años", n2: "con presencia de Soul Professional", n2u: "países",
+    n1: "en el mercado de la cosmética capilar profesional", n1u: "años", n2: "con presencia de Soul Professional", n2u: "países", n2v: "Varios",
     n3: "internacionales desde 2024, con ABIHPEC y ApexBrasil", n3u: "ferias", n4: "con registro sanitario, de la Unión Europea a Japón", n4u: "mercados",
     f_rotulo: "Registros internacionales", f_titulo: "SIN<br>FORMOL",
     f_texto: "Registrar cosméticos en los mercados más exigentes del mundo exige tiempo, pruebas e inversión. <b>Soul Professional</b> recorrió ese camino para llevar el sello sin formol en su fórmula, una ventaja poco común en el alisado capilar.",
@@ -677,7 +695,7 @@ var TEXTOS = {
     g_texto: "Formado en Moda y Fotografía en el IED de Milán, tiene 25 años de carrera en Brasil y en el exterior, con paso por Mod's Hair en París y Toni&nbsp;&amp;&nbsp;Guy en Milán. Creó la técnica Balayage Surf y lidera el área técnica y artística de la marca.",
     g_d1: "Citado por Forbes", g_d2: "Semana de la moda Dolce &amp; Gabbana", g_d3: "Balayage Surf",
     insta_ana: 'Instagram de Ana <span class="seta" aria-hidden="true">→</span>', insta_glauber: 'Instagram de Glauber <span class="seta" aria-hidden="true">→</span>',
-    m_rotulo: "En el mundo", m_titulo: "Una marca brasileña presente en <em>34 países</em>",
+    m_rotulo: "En el mundo", m_titulo: "Una marca brasileña presente en <em>varios países</em>",
     m_texto: "<b>Soul Professional</b> lleva la cosmética capilar brasileña a las mayores ferias del sector, con el apoyo de ABIHPEC y ApexBrasil.",
     m_dica: "Toca o pasa el mouse sobre un punto para ver el país.", m_feiras: "Ferias internacionales",
     p_rotulo: "Salones y peluqueros", p_titulo: "Línea profesional para el día a día del salón",
@@ -839,7 +857,7 @@ var PAISES = [
   // cabeçalho, barra de leitura, paralaxe, botão flutuante e menu ativo
   var topo = document.getElementById('topo'), barra = document.querySelector('.progresso'), flut = document.querySelector('.flutuante');
   var paralaxe = document.querySelectorAll('[data-paralaxe]'), abertura = document.querySelector('.abertura .fundo');
-  var links = document.querySelectorAll('.topo nav a'), secoes = Array.prototype.map.call(links, function (a) { return document.querySelector(a.getAttribute('href')); });
+  var links = document.querySelectorAll('.topo nav a[href^="#"]'), secoes = Array.prototype.map.call(links, function (a) { return document.querySelector(a.getAttribute('href')); });
   var pendente = false;
   function quadro() {
     pendente = false;
@@ -870,6 +888,14 @@ var PAISES = [
       else b.textContent = texto;
     });
   });
+})();
+(function () {
+  var topo = document.getElementById('topo'), b = topo && topo.querySelector('.menu-botao');
+  if (!b) return;
+  function fechar() { topo.classList.remove('aberto'); b.setAttribute('aria-expanded', 'false'); }
+  b.addEventListener('click', function () { var abre = !topo.classList.contains('aberto'); topo.classList.toggle('aberto', abre); b.setAttribute('aria-expanded', abre ? 'true' : 'false'); });
+  topo.querySelectorAll('nav a').forEach(function (a) { a.addEventListener('click', fechar); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') fechar(); });
 })();
 </script>
 
