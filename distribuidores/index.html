@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Seja distribuidor | Soul Professional</title>
+<meta name="description" content="A Soul Professional convida distribuidoras que já atendem salões a representar a marca em sua região, com exclusividade e apoio próximo.">
+<link rel="canonical" href="https://www.soulprofessional.com.br/distribuidores/">
+<meta property="og:title" content="Seja distribuidor | Soul Professional">
+<meta property="og:description" content="Convite a distribuidoras que já atendem salões: exclusividade por região, a progressiva grau 2 sem formol Amazon Liss Orgânica e apoio próximo da Soul Professional.">
+<meta property="og:image" content="https://www.soulprofessional.com.br/arquivos/dist-compartilhar.jpg">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<link rel="icon" type="image/png" href="/arquivos/icone-so.png">
+<link rel="apple-touch-icon" href="/arquivos/icone-so.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap">
+<style>
+/* Layout: carta-convite da diretoria. Blocos chapados do brandbook (creme, verde, preto, areia), cantos retos, como o site institucional. */
+:root {
+  --verde: #73775e; --verde-escuro: #5d614b; --areia: #f0e5df; --preto: #1d1d1b; --branco: #ffffff; --creme: #f7f2ef; --grafite: #575756;
+  --surface: var(--creme); --ink: var(--preto); --ink-soft: var(--grafite); --ink-accent: var(--verde); --raised: var(--branco); --linha: #ddd6cc;
+  --sans: "Work Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --gutter: clamp(16px, 5vw, 56px);
+  --suave: cubic-bezier(.2, .7, .2, 1);
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --surface: #1d1d1b; --ink: #ffffff; --ink-soft: #e9e0da; --ink-accent: #f0e5df; --raised: #26261f; --linha: #3a3a36; color-scheme: dark } }
+:root[data-theme="dark"] { --surface: #1d1d1b; --ink: #ffffff; --ink-soft: #e9e0da; --ink-accent: #f0e5df; --raised: #26261f; --linha: #3a3a36; color-scheme: dark }
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--surface); color: var(--ink); font-family: var(--sans); font-size: 17px; line-height: 1.7; font-weight: 300; overflow-x: hidden; }
+a { color: inherit; }
+img { max-width: 100%; display: block; }
+h1, h2, h3 { text-wrap: balance; margin: 0; line-height: 1.1; font-weight: 300; }
+p { margin: 0; }
+b, strong { font-weight: 600; }
+.miolo { max-width: 1180px; margin: 0 auto; padding-inline: max(var(--gutter), env(safe-area-inset-left, 0px)); }
+.rotulo { font-size: 12px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--ink-accent); }
+.faixa { padding-block: clamp(64px, 9vw, 120px); }
+.claro { --surface: var(--creme); --ink: var(--preto); --ink-soft: var(--grafite); --ink-accent: var(--verde); --linha: #ddd6cc; background: var(--creme); color: var(--preto); }
+.verde { background: var(--verde); color: var(--branco); --ink-accent: var(--areia); --ink-soft: #ecebe2; --linha: rgba(255,255,255,.25); }
+.escuro { background: var(--preto); color: var(--branco); --ink-accent: var(--areia); --ink-soft: #d9d2cc; --linha: #3a3a36; }
+.areia { background: var(--areia); color: var(--preto); --ink-accent: var(--verde-escuro); --ink-soft: var(--grafite); --linha: #d8ccc4; --raised: var(--branco); --surface: var(--areia); }
+.claro { --raised: var(--branco); }
+a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid var(--verde); outline-offset: 3px; }
+
+/* botões */
+.botao { position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 52px; padding: 14px 26px;
+  font: 600 13px/1 var(--sans); letter-spacing: .1em; text-transform: uppercase; text-decoration: none; border: 1px solid transparent; cursor: pointer;
+  overflow: hidden; isolation: isolate; transition: color .35s var(--suave), border-color .35s; }
+.botao::before { content: ""; position: absolute; inset: 0; z-index: -1; transform: scaleX(0); transform-origin: left; transition: transform .45s var(--suave); }
+.botao:hover::before { transform: scaleX(1); }
+.botao .seta { transition: transform .35s var(--suave); }
+.botao:hover .seta { transform: translateX(4px); }
+.b-branco { background: var(--branco); color: var(--preto); } .b-branco::before { background: var(--areia); }
+.b-vazado { border-color: rgba(255,255,255,.65); color: var(--branco); } .b-vazado::before { background: var(--branco); } .b-vazado:hover { color: var(--preto); }
+.b-verde { background: var(--verde); color: var(--branco); } .b-verde::before { background: var(--preto); }
+.acoes { display: flex; flex-wrap: wrap; gap: 12px; }
+
+/* topo */
+.topo { position: absolute; inset: 0 0 auto; z-index: 5; color: var(--branco); }
+.topo .miolo { display: flex; align-items: center; justify-content: space-between; min-height: 76px; padding-top: env(safe-area-inset-top, 0px); }
+.topo img { width: 150px; height: auto; }
+.topo a.voltar { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; text-decoration: none; opacity: .85; }
+@media (max-width: 480px) { .topo img { width: 118px; } }
+
+/* abertura */
+.abertura { position: relative; min-height: min(94vh, 820px); display: flex; align-items: flex-end; color: var(--branco); background: var(--preto); overflow: hidden; }
+.abertura .fundo { position: absolute; inset: 0; background: url(/arquivos/salao.jpg) 60% 40% / cover; }
+.abertura::after { content: ""; position: absolute; inset: 0; background: linear-gradient(100deg, rgba(29,29,27,.9) 0%, rgba(29,29,27,.6) 50%, rgba(29,29,27,.2) 100%), linear-gradient(0deg, rgba(29,29,27,.6), transparent 50%); }
+.abertura .miolo { position: relative; z-index: 1; width: 100%; padding-block: 132px clamp(56px, 9vw, 104px); display: grid; gap: 26px; }
+.abertura .rotulo { color: var(--areia); }
+.abertura h1 { font-size: clamp(36px, 6vw, 76px); letter-spacing: -.02em; max-width: 15ch; }
+.abertura h1 em { font-style: italic; color: var(--areia); }
+.abertura .lead { font-size: clamp(17px, 1.6vw, 20px); max-width: 46ch; color: #f4eee9; }
+.js .sobe { animation: sobe 1s var(--suave) both; } .js .sobe.d1 { animation-delay: .2s; } .js .sobe.d2 { animation-delay: .4s; } .js .sobe.d3 { animation-delay: .6s; }
+@keyframes sobe { from { opacity: 0; transform: translateY(.6em); } to { opacity: 1; transform: none; } }
+
+/* carta */
+.carta .grade { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: clamp(32px, 6vw, 88px); align-items: start; }
+.carta h2 { font-size: clamp(30px, 4vw, 48px); letter-spacing: -.01em; margin-top: 14px; }
+.carta .texto { display: grid; gap: 18px; font-size: clamp(17px, 1.5vw, 19px); color: var(--ink-soft); }
+.carta .texto p:first-child { color: var(--ink); }
+.assinaturas { display: grid; gap: 28px; align-content: center; align-self: center; border-left: 1px solid var(--linha); padding-left: clamp(24px, 4vw, 56px); }
+.assina-titulo { font-size: 15px; color: var(--ink-soft); font-style: italic; }
+.pessoa { display: grid; gap: 6px; }
+.pessoa b { font-size: clamp(28px, 3.4vw, 40px); font-weight: 300; letter-spacing: -.01em; line-height: 1.1; }
+.pessoa span { font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-accent); }
+@media (max-width: 860px) { .carta .grade { grid-template-columns: 1fr; } .assinaturas { border-left: 0; padding-left: 0; border-top: 1px solid var(--linha); padding-top: 28px; } }
+
+/* produto */
+.produto .grade { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: clamp(32px, 6vw, 80px); align-items: center; }
+.produto .frasco { display: grid; place-items: center; }
+.produto .frasco img { max-height: 560px; width: auto; }
+.produto h2 { font-size: clamp(40px, 6vw, 72px); letter-spacing: -.02em; margin-block: 14px 18px; }
+.produto .frase { font-size: clamp(19px, 2vw, 24px); color: var(--areia); max-width: 30ch; line-height: 1.4; }
+.fatos { list-style: none; padding: 0; margin: 32px 0 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 1px solid var(--linha); }
+.fatos li { padding: 18px 16px 18px 0; border-bottom: 1px solid var(--linha); }
+.fatos .valor { display: block; font-size: clamp(26px, 3vw, 34px); line-height: 1.1; color: var(--branco); }
+.fatos small { display: block; font-size: 14px; color: var(--ink-soft); line-height: 1.45; margin-top: 4px; }
+.antes-depois { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: clamp(40px, 6vw, 72px); max-width: 720px; }
+.antes-depois figure { margin: 0; position: relative; }
+.antes-depois img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; }
+.antes-depois figcaption { position: absolute; left: 12px; bottom: 12px; background: var(--preto); color: var(--areia); font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; padding: 6px 10px; }
+.nota { font-size: 13px; color: var(--ink-soft); margin-top: 12px; }
+@media (max-width: 860px) { .produto .grade { grid-template-columns: 1fr; } .produto .frasco img { max-height: 380px; } }
+
+/* venda controlada */
+.controle .miolo { display: grid; gap: 20px; max-width: 900px; }
+.controle h2 { font-size: clamp(30px, 4.4vw, 54px); letter-spacing: -.01em; }
+.controle p { font-size: clamp(17px, 1.6vw, 20px); color: var(--ink-soft); max-width: 52ch; }
+
+/* apoio */
+.apoio h2, .passos h2, .perfil h2, .contato h2 { font-size: clamp(30px, 4vw, 48px); letter-spacing: -.01em; margin-top: 14px; }
+.cartoes { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1px; background: var(--linha); border: 1px solid var(--linha); margin-top: 40px; }
+.cartao { background: var(--surface); padding: 28px 24px; display: grid; gap: 10px; align-content: start; }
+.cartao .n { font-size: 13px; font-weight: 600; letter-spacing: .14em; color: var(--ink-accent); }
+.cartao h3 { font-size: 21px; font-weight: 500; }
+.cartao p { font-size: 15px; color: var(--ink-soft); line-height: 1.6; }
+@media (max-width: 960px) { .cartoes { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .cartoes { grid-template-columns: 1fr; } }
+
+/* exclusividade e perfil */
+.duas { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 6vw, 80px); }
+.duas p { color: var(--ink-soft); margin-top: 16px; font-size: 18px; }
+.lista { list-style: none; padding: 0; margin: 20px 0 0; display: grid; gap: 10px; }
+.lista li { padding-left: 26px; position: relative; }
+.lista li::before { content: ""; position: absolute; left: 0; top: .72em; width: 14px; height: 1px; background: var(--ink-accent); }
+@media (max-width: 860px) { .duas { grid-template-columns: 1fr; } }
+
+/* passos */
+.linha-passos { list-style: none; padding: 0; margin: 40px 0 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; counter-reset: p; }
+.linha-passos li { border-top: 1px solid var(--linha); padding-top: 20px; display: grid; gap: 8px; counter-increment: p; }
+.linha-passos li::before { content: counter(p, decimal-leading-zero); font-size: 44px; font-weight: 300; line-height: 1; color: var(--ink-accent); }
+.linha-passos b { font-size: 19px; font-weight: 500; }
+.linha-passos span { color: var(--ink-soft); font-size: 15px; }
+@media (max-width: 760px) { .linha-passos { grid-template-columns: 1fr; } }
+
+/* contato */
+.contato .grade { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(32px, 6vw, 80px); }
+.contato .texto p { color: var(--ink-soft); margin-top: 16px; font-size: 18px; }
+.contato .texto .acoes { margin-top: 28px; }
+form { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; background: var(--raised); padding: clamp(20px, 3vw, 36px); border: 1px solid var(--linha); }
+form label { display: grid; gap: 6px; font-size: 13px; font-weight: 500; letter-spacing: .04em; }
+form .inteiro { grid-column: 1 / -1; }
+input[type=text], input[type=tel] { font: 400 16px var(--sans); padding: 13px 14px; border: 1px solid #cfc4bb; background: var(--branco); color: var(--preto); border-radius: 0; min-height: 48px; }
+.aceite { grid-column: 1 / -1; display: flex; gap: 10px; align-items: flex-start; font-size: 13px; font-weight: 400; color: var(--ink-soft); line-height: 1.5; }
+.aceite input { margin-top: 3px; width: 18px; height: 18px; flex: none; accent-color: var(--verde); }
+form .botao { grid-column: 1 / -1; }
+form .botao[disabled] { opacity: .6; cursor: wait; }
+.erro { font-style: normal; font-size: 13px; font-weight: 500; color: #9b3b26; min-height: 0; }
+.erro:empty { display: none; }
+.aceite .erro { flex-basis: 100%; }
+.aceite { flex-wrap: wrap; }
+.aceite span { flex: 1 1 0; min-width: 0; }
+.aceite a { color: var(--verde-escuro); }
+.armadilha { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.situacao { grid-column: 1 / -1; font-size: 15px; padding: 14px 16px; background: var(--creme); border-left: 3px solid var(--verde); color: var(--preto); }
+.situacao.ruim { border-left-color: #9b3b26; }
+form.pronto label, form.pronto .botao { display: none; }
+footer a { color: inherit; }
+@media (max-width: 860px) { .contato .grade { grid-template-columns: 1fr; } }
+@media (max-width: 480px) { form { grid-template-columns: 1fr; } }
+
+/* rodapé */
+footer { padding-block: 48px calc(48px + env(safe-area-inset-bottom, 0px)); font-size: 14px; }
+footer .miolo { display: grid; gap: 18px; }
+footer img { width: 132px; }
+footer .dados { display: flex; flex-wrap: wrap; gap: 8px 28px; color: #d9d2cc; }
+footer small { color: #a8a29c; font-size: 12px; line-height: 1.6; max-width: 90ch; }
+
+/* entrada ao rolar: o conteúdo já é legível parado */
+.js .surge { transform: translateY(24px); opacity: .2; transition: transform .9s var(--suave), opacity .9s var(--suave); }
+.js .surge.visto { transform: none; opacity: 1; }
+@media (prefers-reduced-motion: reduce) { .js .sobe, .js .surge { animation: none; transition: none; transform: none; opacity: 1; } .botao::before, .botao .seta { transition: none; } html { scroll-behavior: auto; } }
+</style>
+</head>
+<body>
+<header class="topo">
+  <div class="miolo">
+    <a href="https://www.soulprofessional.com.br/" aria-label="Soul Professional, página inicial"><img src="/arquivos/logo-areia.png" alt="Soul Professional" width="150" height="38"></a>
+    <a class="voltar" href="https://www.soulprofessional.com.br/">Conheça a marca</a>
+  </div>
+</header>
+
+<main>
+  <section class="abertura" aria-labelledby="t-abertura">
+    <div class="fundo" aria-hidden="true"></div>
+    <div class="miolo">
+      <span class="rotulo sobe">Programa de distribuidores · Brasil</span>
+      <h1 id="t-abertura" class="sobe d1">Convidamos distribuidoras selecionadas a representar a <em>Soul Professional</em> em sua região.</h1>
+      <p class="lead sobe d2">Marca brasileira de cosméticos capilares profissionais, há 11 anos no mercado, com a progressiva grau 2 sem formol Amazon Liss Orgânica.</p>
+      <div class="acoes sobe d3">
+        <a class="botao b-branco" href="#contato">Apresentar minha distribuidora <span class="seta" aria-hidden="true">→</span></a>
+        <a class="botao b-vazado" href="https://wa.me/5511992226944?text=Ol%C3%A1%2C%20vi%20a%20p%C3%A1gina%20de%20distribuidores%20da%20Soul%20Professional" target="_blank" rel="noopener">Falar pelo WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="carta claro faixa" aria-labelledby="t-carta">
+    <div class="miolo grade">
+      <div class="surge">
+        <span class="rotulo">Uma palavra da diretoria</span>
+        <h2 id="t-carta">Uma conversa direta com quem dirige a marca.</h2>
+        <div class="texto" style="margin-top:28px">
+          <p>Prezados,</p>
+          <p>A Soul Professional é uma marca brasileira de cosméticos capilares profissionais, com 11 anos de mercado. Estamos ampliando a nossa presença no Brasil por meio de distribuidoras que já atendem salões com produtos profissionais.</p>
+          <p>Oferecemos exclusividade por região, um produto que se destaca no salão e o apoio próximo da nossa equipe, do treinamento ao marketing. Se a sua empresa tem esse perfil, teremos prazer em conhecê-la.</p>
+        </div>
+      </div>
+      <div class="assinaturas surge">
+        <p class="assina-titulo">Com os nossos cumprimentos,</p>
+        <div class="pessoa"><b>Ana Mauro</b><span>CEO &amp; Founder</span></div>
+        <div class="pessoa"><b>Glauber Serafim</b><span>diretor técnico e artístico e sócio</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="produto escuro faixa" aria-labelledby="t-produto">
+    <div class="miolo">
+      <div class="grade">
+        <div class="frasco surge"><img src="/arquivos/dist-frasco.jpg" alt="Frasco de 1 litro do Amazon Liss Orgânica, Soul Professional" width="341" height="1180"></div>
+        <div class="surge">
+          <span class="rotulo">O produto que abre portas no salão</span>
+          <h2 id="t-produto">Amazon Liss Orgânica</h2>
+          <p class="frase">Uma das únicas progressivas grau 2 registradas na Anvisa e sem formol.</p>
+          <ul class="fatos">
+            <li><span class="valor">Grau 2</span><small>registro na Anvisa nº 272090010</small></li>
+            <li><span class="valor">Sem formol</span><small>alinhamento sem formol na fórmula</small></li>
+            <li><span class="valor">9 protocolos</span><small>de 25 a 120 minutos, para cada tipo de cabelo</small></li>
+            <li><span class="valor">1 litro</span><small>cerca de 20 aplicações</small></li>
+          </ul>
+          <p class="nota" style="margin-top:20px">Com manteigas de murumuru e cupuaçu, óleo de buriti, proteína do arroz e aminoácidos.</p>
+        </div>
+      </div>
+      <div class="antes-depois surge" aria-label="Resultado do Amazon Liss Orgânica em salão">
+        <figure><img src="/arquivos/dist-antes.jpg" loading="lazy" width="720" height="998" alt="Cabelo com volume e frizz antes da aplicação"><figcaption>Antes</figcaption></figure>
+        <figure><img src="/arquivos/dist-depois.jpg" loading="lazy" width="720" height="998" alt="Cabelo alinhado e com brilho depois da aplicação do Amazon Liss Orgânica"><figcaption>Depois</figcaption></figure>
+      </div>
+      <p class="nota">Aplicação em salão, cabelo com balaiagem. O resultado varia conforme o tipo e o histórico do cabelo.</p>
+    </div>
+  </section>
+
+  <section class="controle verde faixa" aria-labelledby="t-controle">
+    <div class="miolo surge">
+      <span class="rotulo">Venda controlada</span>
+      <h2 id="t-controle">Uma marca que cuida de onde e como é vendida.</h2>
+      <p>A Soul Professional vende online apenas nas próprias lojas, com preço controlado e acima do preço ao salão. Os produtos não ficam espalhados pela internet com preço baixo, e o distribuidor não disputa preço com a internet.</p>
+    </div>
+  </section>
+
+  <section class="apoio claro faixa" aria-labelledby="t-apoio">
+    <div class="miolo">
+      <div class="surge">
+        <span class="rotulo">O que o distribuidor recebe</span>
+        <h2 id="t-apoio">Apoio para vender, não apenas para comprar.</h2>
+      </div>
+      <div class="cartoes surge">
+        <div class="cartao"><span class="n">01</span><h3>Capacitação</h3><p>Curso online para a equipe de vendas, sem custo. Curso presencial e eventos com Glauber Serafim, combinados caso a caso.</p></div>
+        <div class="cartao"><span class="n">02</span><h3>App do distribuidor</h3><p>Biblioteca de materiais, identidade da marca e Central de dúvidas com resposta em até 48 horas.</p></div>
+        <div class="cartao"><span class="n">03</span><h3>Marketing</h3><p>Instagram da marca ativo, brandbook e material sob medida feito pela equipe de marketing da Soul Professional.</p></div>
+        <div class="cartao"><span class="n">04</span><h3>Amostras</h3><p>Sachês dos produtos mais vendidos, para o salão experimentar antes de comprar.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="areia faixa" aria-label="Exclusividade e perfil">
+    <div class="miolo duas">
+      <div class="surge">
+        <span class="rotulo">Exclusividade</span>
+        <h2 style="font-size:clamp(28px,3.4vw,40px);margin-top:14px">Exclusividade por região, definida em conversa.</h2>
+        <p>Cada região é analisada individualmente, por cidades ou por região do estado, e a parceria prevê uma meta de compra trimestral.</p>
+      </div>
+      <div class="surge">
+        <span class="rotulo">Quem procuramos</span>
+        <h2 style="font-size:clamp(28px,3.4vw,40px);margin-top:14px">Distribuidoras que já atendem salões.</h2>
+        <ul class="lista">
+          <li>Empresa que já vende produto capilar profissional</li>
+          <li>Pode trabalhar com outras marcas</li>
+          <li>Qualquer porte, acima de MEI</li>
+          <li>Atua numa cidade, num grupo de cidades ou numa região do estado</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="passos claro faixa" aria-labelledby="t-passos">
+    <div class="miolo surge">
+      <span class="rotulo">Próximos passos</span>
+      <h2 id="t-passos">Como seguimos depois do seu contato.</h2>
+      <ol class="linha-passos">
+        <li><b>O senhor apresenta a distribuidora</b><span>Pelo formulário abaixo ou pelo WhatsApp.</span></li>
+        <li><b>O comercial responde</b><span>Patrick, do comercial, entra em contato em até 2 dias úteis.</span></li>
+        <li><b>Conversa com a diretoria</b><span>Reunião por vídeo com Ana Mauro e Glauber Serafim.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="contato areia faixa" id="contato" aria-labelledby="t-contato">
+    <div class="miolo grade">
+      <div class="texto surge">
+        <span class="rotulo">Contato</span>
+        <h2 id="t-contato">Apresente sua distribuidora.</h2>
+        <p>Leva menos de um minuto. As condições comerciais são tratadas diretamente com o comercial, de acordo com a sua região.</p>
+        <div class="acoes"><a class="botao b-verde" href="https://wa.me/5511992226944?text=Ol%C3%A1%2C%20vi%20a%20p%C3%A1gina%20de%20distribuidores%20da%20Soul%20Professional" target="_blank" rel="noopener">Prefiro o WhatsApp <span class="seta" aria-hidden="true">→</span></a></div>
+      </div>
+      <form class="surge" id="formulario" action="https://robo-production-6c77.up.railway.app/distribuidor/interesse" method="post" aria-label="Formulário de contato para distribuidores" novalidate>
+        <label class="inteiro">Seu nome<input type="text" name="nome" autocomplete="name" maxlength="80" required><em class="erro" data-campo="nome"></em></label>
+        <label>Empresa<input type="text" name="empresa" autocomplete="organization" maxlength="120" required><em class="erro" data-campo="empresa"></em></label>
+        <label>CNPJ<input type="text" name="cnpj" inputmode="numeric" maxlength="20" placeholder="00.000.000/0000-00" required><em class="erro" data-campo="cnpj"></em></label>
+        <label>Cidade e estado<input type="text" name="cidade" maxlength="80" placeholder="Ex.: Campinas, SP" required><em class="erro" data-campo="cidade"></em></label>
+        <label>WhatsApp<input type="tel" name="whatsapp" autocomplete="tel" maxlength="20" placeholder="(11) 90000-0000" required><em class="erro" data-campo="whatsapp"></em></label>
+        <label class="aceite"><input type="checkbox" name="aceite" value="on" required> <span>Autorizo a Soul Professional a usar estes dados só para falar comigo sobre a distribuição, conforme a <a href="/privacidade/">política de privacidade</a>.</span><em class="erro" data-campo="aceite"></em></label>
+        <input type="hidden" name="ref" value="">
+        <div class="armadilha" aria-hidden="true"><label>Deixe em branco<input type="text" name="deixe_em_branco" tabindex="-1" autocomplete="off"></label></div>
+        <p class="situacao" role="status" aria-live="polite" hidden></p>
+        <button class="botao b-verde" type="submit">Apresentar minha distribuidora <span class="seta" aria-hidden="true">→</span></button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="escuro">
+  <div class="miolo">
+    <img src="/arquivos/logo-areia.png" alt="Soul Professional" width="132" height="33">
+    <div class="dados"><span>contato@soulprofessional.com.br</span><span>WhatsApp (11) 99222-6944</span><span>@soulprofessionals</span><span>São Paulo, SP</span></div>
+    <small>Soul Secret Cosméticos Ltda., CNPJ 41.507.494/0001-82. Os dados enviados por este formulário são usados apenas para o contato comercial sobre a distribuição e podem ser apagados a qualquer momento pelo e-mail contato@soulprofessional.com.br. <a href="/privacidade/">Política de privacidade</a>.</small>
+  </div>
+</footer>
+
+<script>
+/* Entrada suave ao rolar; sem JavaScript, tudo já aparece. */
+document.documentElement.classList.add("js");
+const obs = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("visto"); obs.unobserve(e.target); } }), { rootMargin: "0px 0px -10% 0px" });
+document.querySelectorAll(".surge").forEach(el => obs.observe(el));
+
+/* Formulário: envia ao app sem sair da página; sem JavaScript, o envio normal volta com ?enviado=1 ou ?erro=1. */
+const form = document.getElementById("formulario");
+const situacao = form.querySelector(".situacao");
+const OK = "Recebemos o seu contato. O Patrick, do comercial da Soul Professional, responde em até 2 dias úteis.";
+const FALHA = "Não conseguimos enviar agora. Fale conosco pelo WhatsApp (11) 99222-6944.";
+const params = new URLSearchParams(location.search);
+const ref = params.get("ref") || "";
+if (/^D\d{1,9}$/.test(ref)) form.elements.ref.value = ref;
+function mostrar(texto, ruim) { situacao.hidden = false; situacao.textContent = texto; situacao.classList.toggle("ruim", !!ruim); }
+if (params.get("enviado")) { form.classList.add("pronto"); mostrar(OK); }
+else if (params.get("erro")) mostrar("Confira os campos e tente de novo, ou fale conosco pelo WhatsApp.", true);
+form.addEventListener("submit", async ev => {
+  ev.preventDefault();
+  form.querySelectorAll(".erro").forEach(e => { e.textContent = ""; });
+  const botao = form.querySelector("button");
+  botao.disabled = true;
+  try {
+    const resposta = await fetch(form.action, { method: "POST", body: new FormData(form), headers: { Accept: "application/json" } });
+    const dados = await resposta.json();
+    if (dados.ok) { form.classList.add("pronto"); mostrar(OK); return; }
+    let algum = false;
+    for (const [campo, texto] of Object.entries(dados.erros || {})) {
+      const lugar = form.querySelector(`.erro[data-campo="${campo}"]`);
+      if (lugar) { lugar.textContent = texto; algum = true; } else mostrar(texto, true);
+    }
+    if (algum) { situacao.hidden = true; form.querySelector(".erro:not(:empty)").closest("label").querySelector("input").focus(); }
+  } catch (e) {
+    mostrar(FALHA, true);
+  } finally {
+    botao.disabled = false;
+  }
+});
+</script>
+</body>
+</html>
