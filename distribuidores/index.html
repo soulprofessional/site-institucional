@@ -73,7 +73,10 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
 .abertura::after { content: ""; position: absolute; inset: 0; background: linear-gradient(100deg, rgba(29,29,27,.9) 0%, rgba(29,29,27,.6) 50%, rgba(29,29,27,.2) 100%), linear-gradient(0deg, rgba(29,29,27,.6), transparent 50%); }
 .abertura .miolo { position: relative; z-index: 1; width: 100%; padding-block: 132px clamp(56px, 9vw, 104px); display: grid; gap: 26px; }
 .abertura .rotulo { color: var(--areia); }
-.abertura h1 { font-size: clamp(36px, 6vw, 76px); letter-spacing: -.02em; max-width: 15ch; }
+.abertura h1 { font-size: clamp(40px, 6.4vw, 84px); letter-spacing: -.02em; max-width: 13ch; }
+.selos { list-style: none; padding: 22px 0 0; margin: 6px 0 0; display: flex; flex-wrap: wrap; gap: 10px 36px; border-top: 1px solid rgba(255,255,255,.28); max-width: 760px; }
+.selos li { font-size: 13px; letter-spacing: .04em; color: #e9e0da; line-height: 1.4; }
+.selos b { display: block; font-size: 20px; font-weight: 400; color: var(--branco); letter-spacing: 0; }
 .abertura h1 em { font-style: italic; color: var(--areia); }
 .abertura .lead { font-size: clamp(17px, 1.6vw, 20px); max-width: 46ch; color: #f4eee9; }
 .js .sobe { animation: sobe 1s var(--suave) both; } .js .sobe.d1 { animation-delay: .2s; } .js .sobe.d2 { animation-delay: .4s; } .js .sobe.d3 { animation-delay: .6s; }
@@ -94,23 +97,32 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
 /* produto */
 .produto .grade { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: clamp(32px, 6vw, 80px); align-items: center; }
 .produto .frasco { display: grid; place-items: center; }
-.produto .frasco img { max-height: 560px; width: auto; }
+.produto .frasco img { max-height: 560px; width: auto; mix-blend-mode: lighten; }
 .produto h2 { font-size: clamp(40px, 6vw, 72px); letter-spacing: -.02em; margin-block: 14px 18px; }
 .produto .frase { font-size: clamp(19px, 2vw, 24px); color: var(--areia); max-width: 30ch; line-height: 1.4; }
 .fatos { list-style: none; padding: 0; margin: 32px 0 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 1px solid var(--linha); }
 .fatos li { padding: 18px 16px 18px 0; border-bottom: 1px solid var(--linha); }
 .fatos .valor { display: block; font-size: clamp(26px, 3vw, 34px); line-height: 1.1; color: var(--branco); }
 .fatos small { display: block; font-size: 14px; color: var(--ink-soft); line-height: 1.45; margin-top: 4px; }
-.antes-depois { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: clamp(40px, 6vw, 72px); max-width: 720px; }
-.antes-depois figure { margin: 0; position: relative; }
-.antes-depois img { width: 100%; height: auto; aspect-ratio: 3 / 4; object-fit: cover; }
-.antes-depois figcaption { position: absolute; left: 12px; bottom: 12px; background: var(--preto); color: var(--areia); font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; padding: 6px 10px; }
-.nota { font-size: 13px; color: var(--ink-soft); margin-top: 12px; }
+/* resultado real: texto de um lado, as duas fotos do outro */
+.resultado { display: grid; grid-template-columns: minmax(0, .7fr) minmax(0, 1.3fr); gap: clamp(28px, 5vw, 72px); align-items: center; margin-top: clamp(56px, 8vw, 104px); padding-top: clamp(40px, 6vw, 72px); border-top: 1px solid var(--linha); }
+.resultado h3 { font-size: clamp(28px, 3.6vw, 44px); letter-spacing: -.01em; margin-block: 14px 16px; }
+.resultado .texto p { color: var(--ink-soft); max-width: 38ch; }
+.resultado .texto .nota { margin-top: 18px; }
+.antes-depois { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; }
+.antes-depois figure { margin: 0; position: relative; overflow: hidden; }
+.antes-depois img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; }
+.antes-depois figcaption { position: absolute; left: 0; bottom: 0; background: var(--preto); color: var(--areia); font-size: 12px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; padding: 10px 16px; }
+.antes-depois figure + figure figcaption { background: var(--areia); color: var(--preto); }
+@media (max-width: 860px) { .resultado { grid-template-columns: 1fr; align-items: start; } }
+.nota { font-size: 13px; color: var(--ink-soft); margin-top: 12px; line-height: 1.55; }
 @media (max-width: 860px) { .produto .grade { grid-template-columns: 1fr; } .produto .frasco img { max-height: 380px; } }
 
 /* os 9 protocolos e o fio */
 .protocolos { margin-top: clamp(48px, 7vw, 88px); }
-.protocolos h3 { font-size: clamp(24px, 3vw, 34px); font-weight: 300; }
+.protocolos h3 { font-size: clamp(28px, 3.6vw, 44px); font-weight: 300; letter-spacing: -.01em; margin-top: 14px; }
+.protocolos h3 em { font-style: italic; color: var(--areia); }
+.protocolos .nota { font-size: 16px; max-width: 60ch; }
 .protocolos ol { list-style: none; padding: 0; margin: 24px 0 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: var(--linha); border: 1px solid var(--linha); }
 .protocolos li { background: var(--preto); padding: 20px; display: grid; gap: 4px; align-content: start; }
 .protocolos .num { font-size: 13px; font-weight: 600; letter-spacing: .14em; color: var(--areia); }
@@ -118,13 +130,6 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
 .protocolos small { font-size: 14px; color: var(--ink-soft); }
 @media (max-width: 860px) { .protocolos ol { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 520px) { .protocolos ol { grid-template-columns: 1fr; } }
-.fio { display: grid; grid-template-columns: 1fr auto 1fr; gap: 16px; align-items: center; margin-top: clamp(40px, 6vw, 72px); max-width: 720px; }
-.fio .painel { border: 1px solid var(--linha); padding: 20px; display: grid; gap: 10px; color: var(--areia); align-self: stretch; grid-template-rows: auto 1fr auto; }
-.fio .painel svg { width: 100%; max-width: 200px; height: auto; justify-self: center; }
-.fio .painel p { color: var(--ink-soft); font-size: 14px; line-height: 1.45; }
-.fio .etq { font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--areia); }
-.seta-fio { font-size: 28px; color: var(--areia); }
-@media (max-width: 520px) { .fio { grid-template-columns: 1fr; } .seta-fio { justify-self: center; transform: rotate(90deg); } }
 
 /* a marca: números e prova */
 .marca h2, .linhas h2, .insta h2 { font-size: clamp(30px, 4vw, 48px); letter-spacing: -.01em; margin-top: 14px; }
@@ -139,34 +144,53 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
 .vera figcaption { position: absolute; left: 0; bottom: 0; background: var(--preto); color: var(--branco); padding: 14px 18px; display: grid; gap: 2px; }
 .vera figcaption .rotulo { color: var(--areia); }
 .vera figcaption b { font-size: 22px; font-weight: 400; }
-.destaques { list-style: none; padding: 0; margin: 0; display: grid; gap: 22px; }
-.destaques li { border-top: 1px solid var(--linha); padding-top: 18px; display: grid; gap: 4px; }
-.destaques b { font-size: clamp(19px, 2vw, 23px); font-weight: 500; }
-.destaques span { color: var(--ink-soft); }
+.destaques { list-style: none; padding: 0; margin: 0; display: grid; }
+.destaques li { border-top: 1px solid var(--linha); padding-block: 20px; display: grid; grid-template-columns: 44px minmax(0, 1fr); column-gap: 8px; row-gap: 4px; }
+.destaques li:last-child { border-bottom: 1px solid var(--linha); }
+.destaques .n { grid-row: 1 / span 2; font-size: 13px; font-weight: 600; letter-spacing: .14em; color: var(--ink-accent); padding-top: 6px; }
+.destaques b { font-size: clamp(19px, 2vw, 24px); font-weight: 500; line-height: 1.25; }
+.destaques span:not(.n) { color: var(--ink-soft); font-size: 16px; line-height: 1.6; }
+.frase-marca { font-size: clamp(19px, 2vw, 24px); font-style: italic; line-height: 1.4; margin-top: 16px; color: var(--ink-soft); }
+.sobre-vera { display: grid; gap: 12px; margin-bottom: 32px; }
+.sobre-vera h3 { font-size: clamp(26px, 3.2vw, 40px); letter-spacing: -.01em; }
+.sobre-vera p { color: var(--ink-soft); font-size: 18px; max-width: 46ch; }
 @media (max-width: 860px) { .prova { grid-template-columns: 1fr; } .vera { max-width: 420px; } }
+.blocos { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: var(--linha); border: 1px solid var(--linha); margin-top: clamp(48px, 7vw, 88px); }
+.bloco { background: var(--surface); padding: clamp(24px, 3vw, 36px); display: grid; gap: 14px; align-content: start; }
+.bloco h3 { font-size: clamp(21px, 2.2vw, 26px); font-weight: 500; line-height: 1.2; }
+.bloco ul { list-style: none; padding: 0; margin: 0; display: grid; }
+.bloco li { display: flex; justify-content: space-between; gap: 12px; padding-block: 9px; border-top: 1px solid var(--linha); font-size: 15px; line-height: 1.45; }
+.bloco li span { color: var(--ink-soft); text-align: right; white-space: nowrap; }
+@media (max-width: 960px) { .blocos { grid-template-columns: 1fr; } }
 
-/* linhas */
+/* linhas: produtos recortados sobre a areia, sem caixa branca */
 .lead-linhas { color: var(--ink-soft); font-size: 18px; margin-top: 16px; max-width: 56ch; }
-.grade-linhas { list-style: none; padding: 0; margin: 40px 0 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 240px), 1fr)); gap: 1px; background: var(--linha); border: 1px solid var(--linha); }
-.grade-linhas li { background: var(--preto); padding: 24px; display: grid; gap: 6px; align-content: start; }
-.grade-linhas img { height: 150px; width: auto; max-width: 100%; object-fit: contain; justify-self: center; margin-bottom: 12px; background: #fff; padding: 10px; }
-.grade-linhas b { font-size: 20px; font-weight: 500; color: var(--branco); }
+.grade-linhas { list-style: none; padding: 0; margin: 44px 0 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.grade-linhas li { background: var(--creme); display: grid; grid-template-rows: auto 1fr; overflow: hidden; }
+.vitrine { height: 250px; display: grid; place-items: end center; padding: 30px 20px 0; background: radial-gradient(ellipse 70% 46% at 50% 100%, #dccdc3 0%, rgba(220,205,195,0) 100%), linear-gradient(180deg, #fbf8f6 0%, #efe6e0 100%); }
+.vitrine img { height: 196px; width: auto; max-width: 92%; object-fit: contain; filter: drop-shadow(0 14px 14px rgba(29,29,27,.24)); transition: transform .6s var(--suave); transform-origin: 50% 100%; }
+.grade-linhas li:hover .vitrine img { transform: scale(1.05); }
+.grade-linhas .dados { padding: 20px 22px 26px; display: grid; gap: 6px; align-content: start; border-top: 1px solid var(--linha); }
+.grade-linhas .rotulo { font-size: 11px; }
+.grade-linhas b { font-size: 20px; font-weight: 500; line-height: 1.25; }
 .grade-linhas p { font-size: 14px; color: var(--ink-soft); line-height: 1.55; }
+@media (max-width: 1020px) { .grade-linhas { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 480px) { .grade-linhas { gap: 10px; } .vitrine { height: 190px; padding-top: 20px; } .vitrine img { height: 150px; } .grade-linhas .dados { padding: 14px 14px 18px; } .grade-linhas b { font-size: 17px; } .grade-linhas p { font-size: 13px; } }
 
-/* instagram */
-.insta .miolo { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(32px, 6vw, 72px); align-items: center; }
+/* instagram: publicações reais do perfil */
+.insta .miolo { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: clamp(32px, 6vw, 72px); align-items: center; }
+.insta h2 { font-size: clamp(25px, 3.1vw, 38px); }
 .insta h2 a { text-decoration: none; overflow-wrap: anywhere; }
 .insta p { color: var(--ink-soft); font-size: 18px; margin: 16px 0 28px; max-width: 40ch; }
-.fotos-insta { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
-.fotos-insta img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
+.fotos-insta { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+.fotos-insta a { display: block; overflow: hidden; }
+.fotos-insta img { width: 100%; height: auto; aspect-ratio: 3 / 4; object-fit: cover; transition: transform .6s var(--suave); }
+.fotos-insta a:hover img { transform: scale(1.04); }
 @media (max-width: 860px) { .insta .miolo { grid-template-columns: 1fr; } }
 
-.antes-depois.crespo { max-width: 520px; }
-.antes-depois.crespo img { aspect-ratio: 3 / 5; }
-
 /* venda controlada */
-.controle .miolo { display: grid; gap: 20px; max-width: 900px; }
-.controle h2 { font-size: clamp(30px, 4.4vw, 54px); letter-spacing: -.01em; }
+.controle .miolo { display: grid; gap: 20px; }
+.controle h2 { font-size: clamp(30px, 4.4vw, 54px); letter-spacing: -.01em; max-width: 20ch; }
 .controle p { font-size: clamp(17px, 1.6vw, 20px); color: var(--ink-soft); max-width: 52ch; }
 
 /* apoio */
@@ -231,7 +255,7 @@ footer small { color: #a8a29c; font-size: 12px; line-height: 1.6; max-width: 90c
 /* entrada ao rolar: o conteúdo já é legível parado */
 .js .surge { transform: translateY(24px); opacity: .2; transition: transform .9s var(--suave), opacity .9s var(--suave); }
 .js .surge.visto { transform: none; opacity: 1; }
-@media (prefers-reduced-motion: reduce) { .js .sobe, .js .surge { animation: none; transition: none; transform: none; opacity: 1; } .botao::before, .botao .seta { transition: none; } html { scroll-behavior: auto; } }
+@media (prefers-reduced-motion: reduce) { .js .sobe, .js .surge { animation: none; transition: none; transform: none; opacity: 1; } .botao::before, .botao .seta, .vitrine img, .fotos-insta img { transition: none; } html { scroll-behavior: auto; } }
 </style>
 </head>
 <body>
@@ -246,13 +270,19 @@ footer small { color: #a8a29c; font-size: 12px; line-height: 1.6; max-width: 90c
   <section class="abertura" aria-labelledby="t-abertura">
     <div class="fundo" aria-hidden="true"></div>
     <div class="miolo">
-      <span class="rotulo sobe">Programa de distribuidores · Brasil</span>
-      <h1 id="t-abertura" class="sobe d1">Convidamos distribuidoras selecionadas a representar a <em>Soul Professional</em> em sua região.</h1>
-      <p class="lead sobe d2">Marca brasileira de cosméticos capilares profissionais, há 11 anos no mercado, com a progressiva grau 2 sem formol Amazon Liss Orgânica.</p>
+      <span class="rotulo sobe">Convite a distribuidoras selecionadas · Brasil</span>
+      <h1 id="t-abertura" class="sobe d1">Represente a <em>Soul Professional</em> na sua região.</h1>
+      <p class="lead sobe d2">Marca brasileira de cosméticos capilares profissionais, com exclusividade por região e a progressiva grau 2 sem formol Amazon Liss Orgânica.</p>
       <div class="acoes sobe d3">
         <a class="botao b-branco" href="#contato">Apresentar minha distribuidora <span class="seta" aria-hidden="true">→</span></a>
         <a class="botao b-vazado" href="https://wa.me/5511992226944?text=Ol%C3%A1%2C%20vi%20a%20p%C3%A1gina%20de%20distribuidores%20da%20Soul%20Professional" target="_blank" rel="noopener">Falar pelo WhatsApp</a>
       </div>
+      <ul class="selos sobe d3">
+        <li><b>11 anos</b>de mercado</li>
+        <li><b>34 países</b>com a marca presente</li>
+        <li><b>Grau 2</b>registrado na Anvisa</li>
+        <li><b>Sem formol</b>na fórmula</li>
+      </ul>
     </div>
   </section>
 
@@ -285,15 +315,16 @@ footer small { color: #a8a29c; font-size: 12px; line-height: 1.6; max-width: 90c
           <ul class="fatos">
             <li><span class="valor">Grau 2</span><small>registro na Anvisa nº 272090010</small></li>
             <li><span class="valor">Sem formol</span><small>alinhamento sem formol na fórmula</small></li>
-            <li><span class="valor">9 protocolos</span><small>diferentes, um para cada tipo de cabelo</small></li>
+            <li><span class="valor">09 protocolos</span><small>a única com 09 protocolos diferentes</small></li>
             <li><span class="valor">1 litro</span><small>cerca de 20 aplicações</small></li>
           </ul>
           <p class="nota" style="margin-top:20px">Com manteigas de murumuru e cupuaçu, óleo de buriti, proteína do arroz e aminoácidos.</p>
         </div>
       </div>
       <div class="protocolos surge">
-        <h3>Os 9 protocolos</h3>
-        <p class="nota">Cada protocolo traz o tempo de pausa, as passadas de prancha e os produtos que completam o tratamento.</p>
+        <span class="rotulo">Um protocolo para cada cabelo</span>
+        <h3>A única com <em>09 protocolos</em> diferentes.</h3>
+        <p class="nota">Cada protocolo traz o tempo de pausa, as passadas de prancha e os produtos que completam o tratamento. O salão atende todos os tipos de cabelo com um único produto.</p>
         <ol>
           <li><span class="num">01</span><b>Alisamento</b><small>60 min de pausa · prancha 8 vezes</small></li>
           <li><span class="num">02</span><b>Controle de frizz</b><small>40 min de pausa · prancha 9 vezes</small></li>
@@ -306,17 +337,18 @@ footer small { color: #a8a29c; font-size: 12px; line-height: 1.6; max-width: 90c
           <li><span class="num">09</span><b>Cabelos extremamente danificados</b><small>60 min de pausa · prancha 8 vezes</small></li>
         </ol>
       </div>
-      <div class="fio surge" aria-label="Como o fio muda">
-        <div class="painel"><span class="etq">Antes</span><svg viewBox="0 0 200 200" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M20 10 C27 40 13 70 20 100 S31 160 14 190"/><path d="M36 10 C46 40 26 70 36 100 S50 160 42 190"/><path d="M52 10 C65 40 39 70 52 100 S69 160 46 190"/><path d="M68 10 C75 40 61 70 68 100 S79 160 74 190"/><path d="M84 10 C94 40 74 70 84 100 S98 160 78 190"/><path d="M100 10 C113 40 87 70 100 100 S117 160 106 190"/><path d="M116 10 C123 40 109 70 116 100 S127 160 110 190"/><path d="M132 10 C142 40 122 70 132 100 S146 160 138 190"/><path d="M148 10 C161 40 135 70 148 100 S165 160 142 190"/><path d="M164 10 C171 40 157 70 164 100 S175 160 170 190"/><path d="M180 10 C190 40 170 70 180 100 S194 160 174 190"/></g></svg><p>Fios com frizz e volume difíceis de controlar.</p></div>
-        <span class="seta-fio" aria-hidden="true">→</span>
-        <div class="painel"><span class="etq">Depois</span><svg viewBox="0 0 200 200" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M20 10 V190"/><path d="M36 10 V190"/><path d="M52 10 V190"/><path d="M68 10 V190"/><path d="M84 10 V190"/><path d="M100 10 V190"/><path d="M116 10 V190"/><path d="M132 10 V190"/><path d="M148 10 V190"/><path d="M164 10 V190"/><path d="M180 10 V190"/></g></svg><p>Fios alinhados, macios e com brilho.</p></div>
+      <div class="resultado surge">
+        <div class="texto">
+          <span class="rotulo">Resultado real</span>
+          <h3>O antes e o depois que o salão mostra à cliente.</h3>
+          <p>Cabelo cacheado e volumoso, alinhado em uma única aplicação do Amazon Liss Orgânica, com brilho e movimento.</p>
+          <p class="nota">Fotos reais da mesma modelo, feitas em estúdio pela Soul Professional. O resultado varia conforme o tipo e o histórico do cabelo.</p>
+        </div>
+        <div class="antes-depois">
+          <figure><img src="/arquivos/dist-resultado-antes.jpg" loading="lazy" width="880" height="1100" alt="Modelo com cabelo cacheado e volumoso, de frente e de costas, antes da aplicação"><figcaption>Antes</figcaption></figure>
+          <figure><img src="/arquivos/dist-resultado-depois.jpg" loading="lazy" width="880" height="1100" alt="A mesma modelo com o cabelo liso, alinhado e com brilho, de frente e de costas, depois do Amazon Liss Orgânica"><figcaption>Depois</figcaption></figure>
+        </div>
       </div>
-      <p class="nota">Ilustração para explicar a diferença no fio; não é foto de resultado.</p>
-      <div class="antes-depois crespo surge" aria-label="Resultado do Amazon Liss Orgânica em salão">
-        <figure><img src="/arquivos/dist-crespo-antes.jpg" loading="lazy" width="540" height="900" alt="Cabelo crespo antes da aplicação"><figcaption>Antes</figcaption></figure>
-        <figure><img src="/arquivos/dist-crespo-depois.jpg" loading="lazy" width="540" height="900" alt="Cabelo liso e com brilho depois da aplicação do Amazon Liss Orgânica"><figcaption>Depois</figcaption></figure>
-      </div>
-      <p class="nota">Aplicação em salão, cabelo crespo, protocolo de 45 minutos de pausa. O resultado varia conforme o tipo e o histórico do cabelo.</p>
     </div>
   </section>
 
@@ -325,6 +357,7 @@ footer small { color: #a8a29c; font-size: 12px; line-height: 1.6; max-width: 90c
       <div class="surge">
         <span class="rotulo">A marca</span>
         <h2 id="t-marca">Uma marca brasileira presente no mundo.</h2>
+        <p class="frase-marca">Pois da alma nasce o cuidado. Do cuidado, nasce a beleza.</p>
       </div>
       <ul class="numeros surge">
         <li><span class="valor">11<small>anos</small></span>de mercado em cosméticos capilares profissionais</li>
@@ -334,16 +367,59 @@ footer small { color: #a8a29c; font-size: 12px; line-height: 1.6; max-width: 90c
       </ul>
       <div class="prova">
         <figure class="vera surge"><img src="/arquivos/dist-vera.jpg" alt="Vera Viel, embaixadora da Soul Professional" loading="lazy" width="608" height="760"><figcaption><span class="rotulo">Embaixadora da marca</span><b>Vera Viel</b></figcaption></figure>
-        <ul class="destaques surge">
-          <li><b>Presente nos maiores salões do Brasil e do mundo.</b><span>Profissionais que exigem resultado escolhem a Soul Professional no dia a dia do salão.</span></li>
-          <li><b>Fórmula própria.</b><span>Desenvolvida pela Soul Professional, com insumos de alta qualidade.</span></li>
-          <li><b>Sem formol.</b><span>Alinhamento grau 2 registrado na Anvisa, sem formol na fórmula.</span></li>
-        </ul>
+        <div class="surge">
+          <div class="sobre-vera">
+            <span class="rotulo">Embaixadora da marca</span>
+            <h3>Vera Viel é o rosto da Soul Professional.</h3>
+            <p>Modelo e apresentadora, Vera Viel usa os produtos da Soul Professional e apresenta a marca ao grande público. Para o distribuidor, é um nome conhecido que abre a conversa com o salão.</p>
+          </div>
+          <ul class="destaques">
+            <li><span class="n">01</span><b>Presente nos maiores salões do Brasil e do mundo.</b><span>Profissionais que exigem resultado escolhem a Soul Professional no dia a dia do salão.</span></li>
+            <li><span class="n">02</span><b>Fórmula própria, com ativos da Amazônia.</b><span>Manteigas de murumuru e cupuaçu, óleo de buriti, proteínas e aminoácidos, em fórmulas desenvolvidas pela Soul Professional.</span></li>
+            <li><span class="n">03</span><b>Sem formol.</b><span>Alinhamento grau 2 registrado na Anvisa, sem formol na fórmula, um diferencial raro no alisamento capilar.</span></li>
+            <li><span class="n">04</span><b>Cruelty-free.</b><span>Sem testes em animais e com plantio de árvores em parceria com a S.O.S Amazônia.</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="blocos surge">
+        <div class="bloco">
+          <span class="rotulo">Feiras internacionais</span>
+          <h3>Nas maiores feiras do setor, com a ABIHPEC e a ApexBrasil.</h3>
+          <ul>
+            <li>Cosmoprof Worldwide <span>Bolonha · 2025</span></li>
+            <li>Beautyworld Middle East <span>Dubai · 2024 e 2026</span></li>
+            <li>Feria Belleza y Salud <span>Bogotá · 2026</span></li>
+            <li>Cosmetista Expo <span>Casablanca · 2024</span></li>
+            <li>Cosmoprof India <span>Mumbai</span></li>
+          </ul>
+        </div>
+        <div class="bloco">
+          <span class="rotulo">Registros sanitários</span>
+          <h3>Aprovada nos mercados mais exigentes do mundo.</h3>
+          <ul>
+            <li>União Europeia</li>
+            <li>Estados Unidos</li>
+            <li>Japão</li>
+            <li>América Latina</li>
+            <li>Brasil <span>Anvisa</span></li>
+          </ul>
+        </div>
+        <div class="bloco">
+          <span class="rotulo">Direção técnica e artística</span>
+          <h3>Glauber Serafim, 25 anos de carreira no Brasil e no exterior.</h3>
+          <ul>
+            <li>Mod's Hair <span>Paris</span></li>
+            <li>Toni &amp; Guy <span>Milão</span></li>
+            <li>Criador da técnica <span>Balayage Surf</span></li>
+            <li>Formado pelo IED <span>Milão</span></li>
+            <li>Citado pela <span>Forbes</span></li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="linhas escuro faixa" aria-labelledby="t-linhas">
+  <section class="linhas areia faixa" aria-labelledby="t-linhas">
     <div class="miolo">
       <div class="surge">
         <span class="rotulo">Muito além do Amazon Liss</span>
@@ -351,14 +427,14 @@ footer small { color: #a8a29c; font-size: 12px; line-height: 1.6; max-width: 90c
         <p class="lead-linhas">Tratamento, reconstrução, loiros e finalização: o distribuidor leva ao salão um portfólio inteiro, não um produto só.</p>
       </div>
       <ul class="grade-linhas surge">
-          <li><img src="/arquivos/dist-linha-amazonliss.png" alt="" loading="lazy"><span class="rotulo">Alinhamento sem formol</span><b>Amazon Liss Orgânica</b><p>Progressiva grau 2 sem formol, com 9 protocolos de aplicação.</p></li>
-          <li><img src="/arquivos/dist-linha-gloss.png" alt="" loading="lazy"><span class="rotulo">Hidratação profunda</span><b>Gloss Protein</b><p>Shampoo e máscara para fios macios, leves e com brilho intenso.</p></li>
-          <li><img src="/arquivos/dist-linha-amazon.png" alt="" loading="lazy"><span class="rotulo">Proteína e nutrição</span><b>Amazon Care</b><p>Hair Protein pré-shampoo e shampoo pós-química, para força e reposição.</p></li>
-          <li><img src="/arquivos/dist-linha-clinic.png" alt="" loading="lazy"><span class="rotulo">Cronograma capilar</span><b>Soul Clinic</b><p>Alecrim, Lavanda e Capim-limão: hidratação, nutrição e reconstrução.</p></li>
-          <li><img src="/arquivos/dist-linha-blond.png" alt="" loading="lazy"><span class="rotulo">Cabelos loiros</span><b>Soul Blond</b><p>Shampoo e máscara revitalizadores para loiros e descoloridos.</p></li>
-          <li><img src="/arquivos/dist-linha-acai.png" alt="" loading="lazy"><span class="rotulo">Óleo reparador</span><b>Gloss Açaí Oil</b><p>Extra brilho e acabamento de salão nas pontas.</p></li>
-          <li><img src="/arquivos/dist-linha-prn.png" alt="" loading="lazy"><span class="rotulo">Proteção dos fios</span><b>PRN Soulplex</b><p>Proteção, restauração e nutrição para fios danificados.</p></li>
-          <li><img src="/arquivos/dist-linha-magic.png" alt="" loading="lazy"><span class="rotulo">Leave-in e proteção térmica</span><b>Magic Ball</b><p>Protege, hidrata e restaura, no cabelo seco ou úmido.</p></li>
+          <li><div class="vitrine"><img src="/arquivos/dist-linha-amazonliss.png" alt="" loading="lazy"></div><div class="dados"><span class="rotulo">Alinhamento sem formol</span><b>Amazon Liss Orgânica</b><p>Progressiva grau 2 sem formol, a única com 09 protocolos diferentes.</p></div></li>
+          <li><div class="vitrine"><img src="/arquivos/dist-linha-gloss.png" alt="" loading="lazy"></div><div class="dados"><span class="rotulo">Hidratação profunda</span><b>Gloss Protein</b><p>Shampoo e máscara para fios macios, leves e com brilho intenso.</p></div></li>
+          <li><div class="vitrine"><img src="/arquivos/dist-linha-amazon.png" alt="" loading="lazy"></div><div class="dados"><span class="rotulo">Proteína e nutrição</span><b>Amazon Care</b><p>Hair Protein pré-shampoo e shampoo pós-química, para força e reposição.</p></div></li>
+          <li><div class="vitrine"><img src="/arquivos/dist-linha-clinic.png" alt="" loading="lazy"></div><div class="dados"><span class="rotulo">Cronograma capilar</span><b>Soul Clinic</b><p>Alecrim, Lavanda e Capim-limão: hidratação, nutrição e reconstrução.</p></div></li>
+          <li><div class="vitrine"><img src="/arquivos/dist-linha-blond.png" alt="" loading="lazy"></div><div class="dados"><span class="rotulo">Cabelos loiros</span><b>Soul Blond</b><p>Shampoo e máscara revitalizadores para loiros e descoloridos.</p></div></li>
+          <li><div class="vitrine"><img src="/arquivos/dist-linha-acai.png" alt="" loading="lazy"></div><div class="dados"><span class="rotulo">Óleo reparador</span><b>Gloss Açaí Oil</b><p>Extra brilho e acabamento de salão nas pontas.</p></div></li>
+          <li><div class="vitrine"><img src="/arquivos/dist-linha-prn.png" alt="" loading="lazy"></div><div class="dados"><span class="rotulo">Proteção dos fios</span><b>PRN Soulplex</b><p>Proteção, restauração e nutrição para fios danificados.</p></div></li>
+          <li><div class="vitrine"><img src="/arquivos/dist-linha-magic.png" alt="" loading="lazy"></div><div class="dados"><span class="rotulo">Leave-in e proteção térmica</span><b>Magic Ball</b><p>Protege, hidrata e restaura, no cabelo seco ou úmido.</p></div></li>
       </ul>
     </div>
   </section>
@@ -406,16 +482,21 @@ footer small { color: #a8a29c; font-size: 12px; line-height: 1.6; max-width: 90c
     </div>
   </section>
 
-  <section class="insta verde faixa" aria-labelledby="t-insta">
+  <section class="insta escuro faixa" aria-labelledby="t-insta">
     <div class="miolo">
       <div class="surge">
         <span class="rotulo">No Instagram</span>
         <h2 id="t-insta"><a href="https://www.instagram.com/soulprofessionals" target="_blank" rel="noopener">@soulprofessionals</a></h2>
-        <p>Lançamentos, técnicas e resultados de salão. O mesmo conteúdo que o distribuidor usa para apresentar a marca.</p>
+        <p>Publicações reais do nosso perfil: lançamentos, técnicas e resultados de salão. O mesmo conteúdo que o distribuidor usa para apresentar a marca.</p>
         <a class="botao b-branco" href="https://www.instagram.com/soulprofessionals" target="_blank" rel="noopener">Seguir no Instagram <span class="seta" aria-hidden="true">→</span></a>
       </div>
-      <div class="fotos-insta surge" aria-hidden="true">
-        <img src="/arquivos/dist-insta-1.jpg" alt="" loading="lazy"><img src="/arquivos/dist-insta-2.jpg" alt="" loading="lazy"><img src="/arquivos/dist-insta-3.jpg" alt="" loading="lazy">
+      <div class="fotos-insta surge">
+        <a href="https://www.instagram.com/soulprofessionals" target="_blank" rel="noopener"><img src="/arquivos/dist-post-1.jpg" alt="Publicação do Instagram da Soul Professional: Magic Ball Leave-in" loading="lazy" width="540" height="720"></a>
+        <a href="https://www.instagram.com/soulprofessionals" target="_blank" rel="noopener"><img src="/arquivos/dist-post-2.jpg" alt="Publicação do Instagram da Soul Professional: PRN Soulplex" loading="lazy" width="540" height="720"></a>
+        <a href="https://www.instagram.com/soulprofessionals" target="_blank" rel="noopener"><img src="/arquivos/dist-post-3.jpg" alt="Publicação do Instagram da Soul Professional: Amazon Care Hair Protein" loading="lazy" width="540" height="720"></a>
+        <a href="https://www.instagram.com/soulprofessionals" target="_blank" rel="noopener"><img src="/arquivos/dist-post-4.jpg" alt="Publicação do Instagram da Soul Professional: Gloss Protein Shampoo" loading="lazy" width="540" height="720"></a>
+        <a href="https://www.instagram.com/soulprofessionals" target="_blank" rel="noopener"><img src="/arquivos/dist-post-5.jpg" alt="Publicação do Instagram da Soul Professional: Soul Clinic, cronograma capilar" loading="lazy" width="540" height="720"></a>
+        <a href="https://www.instagram.com/soulprofessionals" target="_blank" rel="noopener"><img src="/arquivos/dist-post-6.jpg" alt="Publicação do Instagram da Soul Professional: PRN Soulplex" loading="lazy" width="540" height="720"></a>
       </div>
     </div>
   </section>
@@ -426,7 +507,7 @@ footer small { color: #a8a29c; font-size: 12px; line-height: 1.6; max-width: 90c
       <h2 id="t-passos">Como seguimos depois do seu contato.</h2>
       <ol class="linha-passos">
         <li><b>Conte-nos sobre a sua empresa</b><span>Pelo formulário abaixo ou pelo WhatsApp.</span></li>
-        <li><b>O comercial responde</b><span>Patrick, do comercial, entra em contato em até 2 dias úteis.</span></li>
+        <li><b>O comercial responde</b><span>A equipe comercial entra em contato em até 2 dias úteis.</span></li>
         <li><b>Conversa com a diretoria</b><span>Reunião por vídeo com Ana Mauro e Glauber Serafim.</span></li>
       </ol>
     </div>
@@ -473,7 +554,7 @@ document.querySelectorAll(".surge").forEach(el => obs.observe(el));
 /* Formulário: envia ao app sem sair da página; sem JavaScript, o envio normal volta com ?enviado=1 ou ?erro=1. */
 const form = document.getElementById("formulario");
 const situacao = form.querySelector(".situacao");
-const OK = "Recebemos o seu contato. O Patrick, do comercial da Soul Professional, responde em até 2 dias úteis.";
+const OK = "Recebemos o seu contato. O comercial da Soul Professional responde em até 2 dias úteis.";
 const FALHA = "Não conseguimos enviar agora. Fale conosco pelo WhatsApp (11) 99222-6944.";
 const params = new URLSearchParams(location.search);
 const ref = params.get("ref") || "";
