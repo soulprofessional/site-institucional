@@ -8,7 +8,7 @@
 <link rel="canonical" href="https://www.soulprofessional.com.br/distribuidores/">
 <meta property="og:title" content="Seja distribuidor | Soul Professional">
 <meta property="og:description" content="Convite a distribuidoras que já atendem salões: exclusividade por região, a progressiva grau 2 sem formol Amazon Liss Orgânica e apoio próximo da Soul Professional.">
-<meta property="og:image" content="https://www.soulprofessional.com.br/arquivos/dist-compartilhar.jpg">
+<meta property="og:image" content="https://www.soulprofessional.com.br/arquivos/dist-compartilhar-v2.jpg">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
 <link rel="icon" type="image/png" href="/arquivos/icone-so.png">
@@ -83,16 +83,16 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
 @keyframes sobe { from { opacity: 0; transform: translateY(.6em); } to { opacity: 1; transform: none; } }
 
 /* carta */
-.carta .grade { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: clamp(32px, 6vw, 88px); align-items: start; }
+.carta .grade { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: clamp(28px, 6vw, 96px); align-items: start; }
 .carta h2 { font-size: clamp(30px, 4vw, 48px); letter-spacing: -.01em; margin-top: 14px; }
-.carta .texto { display: grid; gap: 18px; font-size: clamp(17px, 1.5vw, 19px); color: var(--ink-soft); }
-.carta .texto p:first-child { color: var(--ink); font-size: clamp(19px, 1.7vw, 22px); }
-.assinaturas { display: grid; gap: 28px; align-content: center; align-self: center; border-left: 1px solid var(--linha); padding-left: clamp(24px, 4vw, 56px); }
-.assina-titulo { font-size: 15px; color: var(--ink-soft); font-style: italic; }
-.pessoa { display: grid; gap: 6px; }
-.pessoa b { font-size: clamp(28px, 3.4vw, 40px); font-weight: 300; letter-spacing: -.01em; line-height: 1.1; }
-.pessoa span { font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-accent); }
-@media (max-width: 860px) { .carta .grade { grid-template-columns: 1fr; } .assinaturas { border-left: 0; padding-left: 0; border-top: 1px solid var(--linha); padding-top: 28px; } }
+.carta .texto { display: grid; gap: 20px; font-size: clamp(18px, 1.6vw, 21px); line-height: 1.65; color: var(--ink); max-width: 58ch; }
+.assinaturas { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 40px; margin-top: 40px; padding-top: 28px; border-top: 1px solid var(--linha); max-width: 58ch; }
+.assina-titulo { grid-column: 1 / -1; font-size: 15px; color: var(--ink-soft); font-style: italic; }
+.pessoa { display: grid; gap: 8px; align-content: start; }
+.pessoa b { font-size: clamp(24px, 2.6vw, 32px); font-weight: 300; letter-spacing: -.01em; line-height: 1.1; }
+.pessoa span { font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-accent); line-height: 1.5; }
+@media (max-width: 860px) { .carta .grade { grid-template-columns: 1fr; } }
+@media (max-width: 480px) { .assinaturas { grid-template-columns: 1fr; row-gap: 22px; } }
 
 /* produto */
 .produto .grade { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: clamp(32px, 6vw, 80px); align-items: center; }
@@ -118,18 +118,31 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
 .nota { font-size: 13px; color: var(--ink-soft); margin-top: 12px; line-height: 1.55; }
 @media (max-width: 860px) { .produto .grade { grid-template-columns: 1fr; } .produto .frasco img { max-height: 380px; } }
 
-/* os 9 protocolos e o fio */
-.protocolos { margin-top: clamp(48px, 7vw, 88px); }
-.protocolos h3 { font-size: clamp(28px, 3.6vw, 44px); font-weight: 300; letter-spacing: -.01em; margin-top: 14px; }
-.protocolos h3 em { font-style: italic; color: var(--areia); }
-.protocolos .nota { font-size: 16px; max-width: 60ch; }
-.protocolos ol { list-style: none; padding: 0; margin: 24px 0 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: var(--linha); border: 1px solid var(--linha); }
-.protocolos li { background: var(--preto); padding: 20px; display: grid; gap: 4px; align-content: start; }
-.protocolos .num { font-size: 13px; font-weight: 600; letter-spacing: .14em; color: var(--areia); }
-.protocolos b { font-size: 18px; font-weight: 500; color: var(--branco); line-height: 1.3; }
-.protocolos small { font-size: 14px; color: var(--ink-soft); }
-@media (max-width: 860px) { .protocolos ol { grid-template-columns: 1fr 1fr; } }
-@media (max-width: 520px) { .protocolos ol { grid-template-columns: 1fr; } }
+/* os 09 protocolos: número gigante e cartões com os dois dados em destaque */
+.protocolos { margin-top: clamp(56px, 8vw, 104px); padding-top: clamp(40px, 6vw, 72px); border-top: 1px solid var(--linha); }
+.cab-protocolos { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: clamp(20px, 4vw, 56px); align-items: end; }
+.nove { font-size: clamp(120px, 19vw, 260px); font-weight: 300; line-height: .78; letter-spacing: -.05em; color: transparent; -webkit-text-stroke: 1.5px var(--areia); margin-left: -.04em; }
+.protocolos h3 { font-size: clamp(30px, 4.2vw, 54px); font-weight: 300; letter-spacing: -.02em; margin-block: 14px 16px; max-width: 18ch; }
+.protocolos h3 em { font-style: italic; color: var(--areia); white-space: nowrap; }
+.protocolos .nota { font-size: 17px; max-width: 52ch; margin: 0; }
+.protocolos ol { list-style: none; padding: 0; margin: clamp(32px, 5vw, 56px) 0 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.protocolos li { position: relative; background: #262622; border-top: 2px solid var(--areia); padding: 22px 24px 24px; display: grid; grid-template-rows: auto 1fr auto; gap: 14px; min-height: 216px; overflow: hidden; transition: background-color .4s var(--suave), color .4s var(--suave), transform .4s var(--suave); }
+.protocolos .num { font-size: 13px; font-weight: 600; letter-spacing: .16em; color: var(--areia); transition: color .4s; }
+.protocolos .num::after { content: " / 09"; opacity: .45; }
+.protocolos b { font-size: clamp(20px, 2vw, 25px); font-weight: 400; color: var(--branco); line-height: 1.2; letter-spacing: -.01em; transition: color .4s; }
+.dados-prot { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 0; padding-top: 14px; border-top: 1px solid var(--linha); transition: border-color .4s; }
+.dados-prot div { display: grid; gap: 2px; }
+.dados-prot dt { font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-soft); order: 2; transition: color .4s; }
+.dados-prot dd { margin: 0; font-size: clamp(22px, 2.2vw, 28px); font-weight: 300; line-height: 1.1; color: var(--areia); white-space: nowrap; transition: color .4s; }
+.dados-prot dd small { font-size: .55em; font-weight: 500; margin-left: 3px; }
+@media (hover: hover) {
+  .protocolos li:hover { background: var(--areia); transform: translateY(-4px); }
+  .protocolos li:hover b, .protocolos li:hover dd, .protocolos li:hover .num { color: var(--preto); }
+  .protocolos li:hover dt { color: var(--grafite); }
+  .protocolos li:hover .dados-prot { border-color: #d8ccc4; }
+}
+@media (max-width: 920px) { .protocolos ol { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .cab-protocolos { grid-template-columns: 1fr; } .protocolos ol { grid-template-columns: 1fr; } .protocolos li { min-height: 0; } }
 
 /* a marca: números e prova */
 .marca h2, .linhas h2, .insta h2 { font-size: clamp(30px, 4vw, 48px); letter-spacing: -.01em; margin-top: 14px; }
@@ -255,7 +268,7 @@ footer small { color: #a8a29c; font-size: 12px; line-height: 1.6; max-width: 90c
 /* entrada ao rolar: o conteúdo já é legível parado */
 .js .surge { transform: translateY(24px); opacity: .2; transition: transform .9s var(--suave), opacity .9s var(--suave); }
 .js .surge.visto { transform: none; opacity: 1; }
-@media (prefers-reduced-motion: reduce) { .js .sobe, .js .surge { animation: none; transition: none; transform: none; opacity: 1; } .botao::before, .botao .seta, .vitrine img, .fotos-insta img { transition: none; } html { scroll-behavior: auto; } }
+@media (prefers-reduced-motion: reduce) { .js .sobe, .js .surge { animation: none; transition: none; transform: none; opacity: 1; } .botao::before, .botao .seta, .vitrine img, .fotos-insta img, .protocolos li, .protocolos li * { transition: none; } html { scroll-behavior: auto; } }
 </style>
 </head>
 <body>
@@ -291,15 +304,17 @@ footer small { color: #a8a29c; font-size: 12px; line-height: 1.6; max-width: 90c
       <div class="surge">
         <span class="rotulo">Uma palavra da diretoria</span>
         <h2 id="t-carta">Uma conversa direta com quem dirige a marca.</h2>
-        <div class="texto" style="margin-top:28px">
+      </div>
+      <div class="surge">
+        <div class="texto">
           <p>A Soul Professional é uma marca brasileira de cosméticos capilares profissionais, com 11 anos de mercado. Estamos ampliando a nossa presença no Brasil por meio de distribuidoras que já atendem salões com produtos profissionais.</p>
           <p>Oferecemos exclusividade por região, um produto que se destaca no salão e o apoio próximo da nossa equipe, do treinamento ao marketing. Se a sua empresa tem esse perfil, teremos prazer em conhecê-la.</p>
         </div>
-      </div>
-      <div class="assinaturas surge">
-        <p class="assina-titulo">Com os nossos cumprimentos,</p>
-        <div class="pessoa"><b>Ana Mauro</b><span>CEO &amp; Founder</span></div>
-        <div class="pessoa"><b>Glauber Serafim</b><span>diretor técnico e artístico e sócio</span></div>
+        <div class="assinaturas">
+          <p class="assina-titulo">Com os nossos cumprimentos,</p>
+          <div class="pessoa"><b>Ana Mauro</b><span>CEO &amp; Founder</span></div>
+          <div class="pessoa"><b>Glauber Serafim</b><span>Diretor técnico e artístico e sócio</span></div>
+        </div>
       </div>
     </div>
   </section>
@@ -322,19 +337,24 @@ footer small { color: #a8a29c; font-size: 12px; line-height: 1.6; max-width: 90c
         </div>
       </div>
       <div class="protocolos surge">
-        <span class="rotulo">Um protocolo para cada cabelo</span>
-        <h3>A única com <em>09 protocolos</em> diferentes.</h3>
-        <p class="nota">Cada protocolo traz o tempo de pausa, as passadas de prancha e os produtos que completam o tratamento. O salão atende todos os tipos de cabelo com um único produto.</p>
+        <div class="cab-protocolos">
+          <span class="nove" aria-hidden="true">09</span>
+          <div>
+            <span class="rotulo">Um protocolo para cada cabelo</span>
+            <h3>A única com <em>09 protocolos</em> diferentes.</h3>
+            <p class="nota">Cada protocolo traz o tempo de pausa, as passadas de prancha e os produtos que completam o tratamento. O salão atende todos os tipos de cabelo com um único produto.</p>
+          </div>
+        </div>
         <ol>
-          <li><span class="num">01</span><b>Alisamento</b><small>60 min de pausa · prancha 8 vezes</small></li>
-          <li><span class="num">02</span><b>Controle de frizz</b><small>40 min de pausa · prancha 9 vezes</small></li>
-          <li><span class="num">03</span><b>Cabelos com henna e progressiva</b><small>25 min de pausa · prancha 6 vezes</small></li>
-          <li><span class="num">04</span><b>Liso Power para cabelos grossos</b><small>60 a 70 min de pausa · prancha 12 vezes</small></li>
-          <li><span class="num">05</span><b>Alisamento e coloração</b><small>35 a 60 min de pausa · prancha 8 vezes</small></li>
-          <li><span class="num">06</span><b>Alisamento blond iluminada</b><small>30 a 60 min de pausa · prancha 7 vezes</small></li>
-          <li><span class="num">07</span><b>Cristal Brush</b><small>35 min de pausa · prancha 8 vezes</small></li>
-          <li><span class="num">08</span><b>Cabelo afro</b><small>120 min de pausa · prancha 12 vezes</small></li>
-          <li><span class="num">09</span><b>Cabelos extremamente danificados</b><small>60 min de pausa · prancha 8 vezes</small></li>
+          <li><span class="num">01</span><b>Alisamento</b><dl class="dados-prot"><div><dt>de pausa</dt><dd>60<small>min</small></dd></div><div><dt>de prancha</dt><dd>8<small>passadas</small></dd></div></dl></li>
+          <li><span class="num">02</span><b>Controle de frizz</b><dl class="dados-prot"><div><dt>de pausa</dt><dd>40<small>min</small></dd></div><div><dt>de prancha</dt><dd>9<small>passadas</small></dd></div></dl></li>
+          <li><span class="num">03</span><b>Cabelos com henna e progressiva</b><dl class="dados-prot"><div><dt>de pausa</dt><dd>25<small>min</small></dd></div><div><dt>de prancha</dt><dd>6<small>passadas</small></dd></div></dl></li>
+          <li><span class="num">04</span><b>Liso Power para cabelos grossos</b><dl class="dados-prot"><div><dt>de pausa</dt><dd>60 a 70<small>min</small></dd></div><div><dt>de prancha</dt><dd>12<small>passadas</small></dd></div></dl></li>
+          <li><span class="num">05</span><b>Alisamento e coloração</b><dl class="dados-prot"><div><dt>de pausa</dt><dd>35 a 60<small>min</small></dd></div><div><dt>de prancha</dt><dd>8<small>passadas</small></dd></div></dl></li>
+          <li><span class="num">06</span><b>Alisamento blond iluminada</b><dl class="dados-prot"><div><dt>de pausa</dt><dd>30 a 60<small>min</small></dd></div><div><dt>de prancha</dt><dd>7<small>passadas</small></dd></div></dl></li>
+          <li><span class="num">07</span><b>Cristal Brush</b><dl class="dados-prot"><div><dt>de pausa</dt><dd>35<small>min</small></dd></div><div><dt>de prancha</dt><dd>8<small>passadas</small></dd></div></dl></li>
+          <li><span class="num">08</span><b>Cabelo afro</b><dl class="dados-prot"><div><dt>de pausa</dt><dd>120<small>min</small></dd></div><div><dt>de prancha</dt><dd>12<small>passadas</small></dd></div></dl></li>
+          <li><span class="num">09</span><b>Cabelos extremamente danificados</b><dl class="dados-prot"><div><dt>de pausa</dt><dd>60<small>min</small></dd></div><div><dt>de prancha</dt><dd>8<small>passadas</small></dd></div></dl></li>
         </ol>
       </div>
       <div class="resultado surge">
